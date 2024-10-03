@@ -1,0 +1,18 @@
+
+<div class="container mt-5">
+  <h1>Pokédex</h1>
+
+  <div class="row gap-3">
+    <% @pokemons.each do |pokemon| %>
+      <div class="card" style="width: 18rem;">
+      <!-- <img src="..." class="card-img-top" alt="...">-->
+      <%= cl_image_tag pokemon.photo.key, class: 'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title"><%= pokemon.name %></h5>
+          <p class="card-text"><%= pokemon.element_type %></p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
