@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "pages#home"
+  root to: "pokemons#index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -10,5 +10,8 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # get '/pokemons', to: 'pokemons#index'
-  resources :pokemons, only: [:index]
+  # get '/pokemons/:id', to: 'pokemons#show'
+  # get '/trainers', to: 'trainers#index'
+  resources :pokemons, only: [:show]
+  resources :trainers, only: [:index]
 end

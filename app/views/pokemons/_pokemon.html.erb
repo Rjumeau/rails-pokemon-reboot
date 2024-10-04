@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <%= link_to pokemon_path(pokemon) do %>
+    <!-- <img src="..." class="card-img-top" alt="...">-->
+    <%= cl_image_tag pokemon.photo.key, class: 'card-img-top' %>
+    <div class="card-body">
+      <h5 class="card-title"><%= pokemon.name %></h5>
+      <p class="card-text"><%= pokemon.element_type %></p>
+  <!--    <a href="pokemon/" class="btn btn-primary">Go somewhere</a>-->
+
+    </div>
+  <% end %>
+</div>
