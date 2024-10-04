@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # get '/pokemons', to: 'pokemons#index'
   # get '/pokemons/:id', to: 'pokemons#show'
   # get '/trainers', to: 'trainers#index'
+  # get '/trainers/:id, to 'trainers#show'
   resources :pokemons, only: [:show]
-  resources :trainers, only: [:index]
+  resources :trainers, only: [:index, :show]
 end
