@@ -1,7 +1,6 @@
-
 <div class="container mt-5">
   <h1>Pokédex</h1>
-
+  <%= link_to "Trainers", trainers_path %>
   <div class="row gap-3">
     <% @pokemons.each do |pokemon| %>
       <%= render 'pokemon', pokemon: pokemon %>

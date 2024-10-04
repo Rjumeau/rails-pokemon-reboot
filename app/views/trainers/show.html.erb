@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <%= link_to '< Trainers', trainers_path %>
+  <h1 class="my-3"><%= @trainer.name %> catch them'all !</h1>
+  <div class="row">
+    <div class="col-6">
+      <%= render 'trainer', trainer: @trainer %>
+    </div>
+    <div class="col-6">
+      <%# @trainer.pokeballs.each do |pokeball| %>
+        <%#= cl_image_tag pokeball.pokemon.photo.key %>
+        <%#= pokeball.pokemon.name %>
+      <%# end %>
+
+      <div class="row gap-3">
+        <% @trainer.pokeballs.each do |pokeball| %>
+          <div class="card col-3" style="width: 18rem;">
+            <%= link_to pokemon_path(pokeball.pokemon) do %>
+              <%= cl_image_tag pokeball.pokemon.photo.key, class: 'card-img-top' %>
+              <div class="card-body">
+                <h5 class="card-title"><%= pokeball.pokemon.name %></h5>
+                <p class="card-text"><%= pokeball.pokemon.element_type %></p>
+                <p class="card-text">Caught on <%= pokeball.caught_on.strftime("%B %d %Y") %></p>
+                <p class="card-text"><%= pokeball.location %></p>
+              </div>
+            <% end %>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

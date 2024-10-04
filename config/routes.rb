@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   # get '/pokemons/:id', to: 'pokemons#show'
   # get '/trainers', to: 'trainers#index'
   # get '/trainers/:id, to 'trainers#show'
-  resources :pokemons, only: [:show]
+  # post '/pokemons/:id/pokeballs, to: 'pokeballs#create'
+
+  resources :pokemons, only: [:show] do
+    resources :pokeballs, only: [:create]
+  end
   resources :trainers, only: [:index, :show]
 end
