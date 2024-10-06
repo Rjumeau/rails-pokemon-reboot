@@ -5,5 +5,14 @@
       <h3 class="my-3">You hear a rustle in the tall grass...A wild Pokémon appears!</h3>
       <%= render 'pokemon', pokemon: @pokemon %>
     </div>
+    <div class="col-6">
+      <h2>Do you dare to catch this Pokémon?</h2>
+      <%= simple_form_for [@pokemon, @pokeball] do |f| %>
+        <%= f.association :trainer %>
+        <%= f.input :location %>
+        <%= f.input :caught_on, html5: true %>
+        <%= f.submit "Caught", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
   </div>
 </div>
